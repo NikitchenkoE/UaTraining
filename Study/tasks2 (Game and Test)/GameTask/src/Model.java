@@ -3,12 +3,11 @@ import java.util.Random;
 
 public class Model {
 
+    Random random = new Random();
 
     private int arg;
     private final int min = 0;
     private final int max = 100;
-    Random random = new Random();
-
     private int rand;
 
     //random function
@@ -24,9 +23,7 @@ public class Model {
         return answerNumber;
     }
 
-    public ArrayList<Integer> getList() {
-        return list;
-    }
+
 
     //Announcement of the limits of the required number
     private int minBorder = min;
@@ -47,6 +44,10 @@ public class Model {
     //List of previous numbers
     ArrayList<Integer> list = new ArrayList<>();
 
+    public ArrayList<Integer> getList() {
+        return list;
+    }
+
     public int getArg() {
         return arg;
     }
@@ -63,7 +64,7 @@ public class Model {
             this.arg = guessNumber;
             adder(arg);
         } else {
-            System.out.println("Try a number from " + minBorder + " to " + maxBorder);
+            answerNumber = 3;
         }
     }
 
