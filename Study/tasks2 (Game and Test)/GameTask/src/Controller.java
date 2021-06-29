@@ -19,7 +19,7 @@ public class Controller {
             while (model.getRand() != model.getArg()) {
                 Scanner sc = new Scanner(System.in);
                 int v = sc.nextInt();
-                model.access(v);
+                filter(v);
 
                 view.printer(model.getAnswerNumber(), model.getMinBorder(), model.getMaxBorder(), model.getList());
             }
@@ -28,6 +28,16 @@ public class Controller {
             startGame();
         }
 
+    }
+
+    //setter and validity test
+    private void filter(int guessNumber) {
+        if (guessNumber >= model.getMin() & guessNumber <= model.getMax()) {
+            model.setArg(guessNumber);
+            model.adder(model.getArg());
+        } else {
+            model.setAnswerNumber(3);
+        }
     }
 
 

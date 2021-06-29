@@ -10,6 +10,14 @@ public class Model {
     private final int max = 100;
     private int rand;
 
+    public int getMin() {
+        return min;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
     //random function
     public void randomizer() {
         int diff = max - min;
@@ -19,10 +27,13 @@ public class Model {
 
     private int answerNumber;
 
+    public void setAnswerNumber(int answerNumber) {
+        this.answerNumber = answerNumber;
+    }
+
     public int getAnswerNumber() {
         return answerNumber;
     }
-
 
 
     //Announcement of the limits of the required number
@@ -52,25 +63,12 @@ public class Model {
         return arg;
     }
 
-    //Link to model
-    public void access(int arg) {
-        setArg(arg);
+    public void setArg(int arg) {
+        this.arg = arg;
     }
-
-
-    //setter and validity test
-    private void setArg(int guessNumber) {
-        if (guessNumber >= min & guessNumber <= max) {
-            this.arg = guessNumber;
-            adder(arg);
-        } else {
-            answerNumber = 3;
-        }
-    }
-
 
     //Add and control information in Array list. Core of game
-    private void adder(int b) {
+    public void adder(int b) {
         if (b == rand) {
             list.add(b);
             answerNumber = 0;
