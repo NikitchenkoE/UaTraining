@@ -62,6 +62,10 @@ public class Model {
         return list;
     }
 
+    public void setList(ArrayList<Integer> list) {
+        this.list = list;
+    }
+
     public int getArg() {
         return arg;
     }
