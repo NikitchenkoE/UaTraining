@@ -14,7 +14,9 @@ public class Controller {
     }
 
     public void startGame() {
-        System.out.println("Try to guess the number between [ " + model.getMinBorder() + " and " + model.getMaxBorder() + " ]");
+        model.setBarriers(Constants.MIN_BARRIER,Constants.MAX_BATTIER);
+
+        System.out.println("Try to guess the number between [ " + Constants.MIN_BARRIER + " and " + Constants.MAX_BATTIER + " ]");
 
         model.randomizer();
         try {

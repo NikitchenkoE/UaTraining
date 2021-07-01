@@ -13,7 +13,7 @@ public class TestModel {
 
     @Test
     public void testRandomizer() {
-        while (i != 100000) {
+        while (i != 10000000) {
             m.randomizer();
             int rand = m.getRand();
             Assert.assertNotEquals(rand, 100);
@@ -21,10 +21,30 @@ public class TestModel {
         }
         i = 0;
 
-        while (i != 100000) {
+        while (i != 10000000) {
             m.randomizer();
             int rand = m.getRand();
             Assert.assertNotEquals(rand, 0);
+            i++;
+        }
+    }
+
+    @Test
+    public void testRandomizer2() {
+        while (i != 10000000) {
+            m.randomizer();
+            int rand = m.getRand();
+            boolean b = rand<100;
+            Assert.assertTrue(b);
+            i++;
+        }
+        i = 0;
+
+        while (i != 10000000) {
+            m.randomizer();
+            int rand = m.getRand();
+            boolean b = rand>0;
+            Assert.assertTrue(b);
             i++;
         }
     }
@@ -67,6 +87,14 @@ public class TestModel {
         m.adder(m.getArg());
 
         Assert.assertEquals(m.getAnswerNumber(), 2);
+    }
+
+    @Test
+
+    public void testSetBarriers(){
+        m.setBarriers(0,1);
+        Assert.assertEquals(m.getMax(),1);
+        Assert.assertEquals(m.getMin(),0);
     }
 
 

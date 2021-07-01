@@ -8,13 +8,13 @@ public class Model {
     Random random = new Random();
 
     private int arg;
-    private final int min = 0;
-    private final int max = 100;
+    private int min;
+    private int max;
     private int rand;
     private int answerNumber;
     //Announcement of the limits of the required number
-    private int minBorder = min;
-    private int maxBorder = max;
+    private int minBorder;
+    private int maxBorder;
 
     public int getMin() {
         return min;
@@ -26,9 +26,8 @@ public class Model {
 
     //random function
     public void randomizer() {
-        int diff = max - min;
-        rand = random.nextInt(diff-1);
-        rand += min+1;
+        rand = (int)Math.ceil(Math.random()*
+                (max-min-1)+min+1);
     }
 
     public void setAnswerNumber(int answerNumber) {
@@ -64,6 +63,11 @@ public class Model {
 
     public void setList(ArrayList<Integer> list) {
         this.list = list;
+    }
+
+    public void setBarriers(int minBarrier, int maxBarrier) {
+        min = minBorder = minBarrier;
+        max =maxBorder= maxBarrier;
     }
 
     public int getArg() {
