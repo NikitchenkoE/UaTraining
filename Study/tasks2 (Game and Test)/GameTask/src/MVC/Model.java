@@ -7,31 +7,33 @@ public class Model {
 
     Random random = new Random();
 
-    private int arg;
-    private int min;
-    private int max;
+
+
     private int rand;
     private int answerNumber;
     //Announcement of the limits of the required number
     private int minBorder;
     private int maxBorder;
 
-    public int getMin() {
-        return min;
-    }
-
-    public int getMax() {
-        return max;
-    }
+    //List of previous numbers
+    ArrayList<Integer> list = new ArrayList<>();
 
     //random function
     public void randomizer() {
         rand = (int)Math.ceil(Math.random()*
-                (max-min-1)+min+1);
+                (minBorder-maxBorder-1)+minBorder);
     }
 
     public void setAnswerNumber(int answerNumber) {
         this.answerNumber = answerNumber;
+    }
+
+    public void setRand(int rand) {
+        this.rand = rand;
+    }
+
+    public void setList(ArrayList<Integer> list) {
+        this.list = list;
     }
 
     public int getAnswerNumber() {
@@ -46,36 +48,17 @@ public class Model {
         return maxBorder;
     }
 
-    public void setRand(int rand) {
-        this.rand = rand;
-    }
-
     public int getRand() {
         return rand;
     }
-
-    //List of previous numbers
-    ArrayList<Integer> list = new ArrayList<>();
 
     public ArrayList<Integer> getList() {
         return list;
     }
 
-    public void setList(ArrayList<Integer> list) {
-        this.list = list;
-    }
-
     public void setBarriers(int minBarrier, int maxBarrier) {
-        min = minBorder = minBarrier;
-        max =maxBorder= maxBarrier;
-    }
-
-    public int getArg() {
-        return arg;
-    }
-
-    public void setArg(int arg) {
-        this.arg = arg;
+        minBorder = minBarrier;
+        maxBorder= maxBarrier;
     }
 
     //Add and control information in Array list. Core of game

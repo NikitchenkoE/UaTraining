@@ -16,11 +16,11 @@ public class Controller {
     public void startGame() {
         model.setBarriers(Constants.MIN_BARRIER,Constants.MAX_BATTIER);
 
-        System.out.println("Try to guess the number between [ " + Constants.MIN_BARRIER + " and " + Constants.MAX_BATTIER + " ]");
+        view.massageReader(view.GREETING);
 
         model.randomizer();
         try {
-            while (model.getRand() != model.getArg()) {
+            while (model.getAnswerNumber()!=0) {
                 Scanner sc = new Scanner(System.in);
                 int v = sc.nextInt();
                 filter(v);
@@ -31,14 +31,12 @@ public class Controller {
             view.massageReader(view.BROKEN_APP);
             startGame();
         }
-
     }
 
     //setter and validity test
     private void filter(int guessNumber) {
-        if (guessNumber >= model.getMin() & guessNumber <= model.getMax()) {
-            model.setArg(guessNumber);
-            model.adder(model.getArg());
+        if (guessNumber >= Constants.MIN_BARRIER & guessNumber <= Constants.MAX_BATTIER) {
+            model.adder(guessNumber);
         } else {
             model.setAnswerNumber(3);
         }

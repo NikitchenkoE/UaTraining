@@ -1,5 +1,6 @@
 package Test;
 
+import MVC.Constants;
 import MVC.Model;
 import org.junit.Assert;
 import org.junit.Test;
@@ -52,8 +53,7 @@ public class TestModel {
     @Test
     public void testAdderSmaller() {
         m.setRand(1);
-        m.setArg(0);
-        m.adder(m.getArg());
+        m.adder(1);
 
         Assert.assertEquals(m.getAnswerNumber(), -1);
     }
@@ -61,17 +61,14 @@ public class TestModel {
     @Test
     public void testAdderBigger() {
         m.setRand(1);
-        m.setArg(2);
-        m.adder(m.getArg());
-
+        m.adder(2);
         Assert.assertEquals(m.getAnswerNumber(), 1);
     }
 
     @Test
     public void testAdderEqual() {
         m.setRand(1);
-        m.setArg(1);
-        m.adder(m.getArg());
+        m.adder(1);
 
         Assert.assertEquals(m.getAnswerNumber(), 0);
     }
@@ -83,8 +80,7 @@ public class TestModel {
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         m.setList(list);
-        m.setArg(1);
-        m.adder(m.getArg());
+        m.adder(1);
 
         Assert.assertEquals(m.getAnswerNumber(), 2);
     }
@@ -93,8 +89,8 @@ public class TestModel {
 
     public void testSetBarriers(){
         m.setBarriers(0,1);
-        Assert.assertEquals(m.getMax(),1);
-        Assert.assertEquals(m.getMin(),0);
+        Assert.assertEquals(m.getMaxBorder(),1);
+        Assert.assertEquals(m.getMinBorder(),0);
     }
 
 

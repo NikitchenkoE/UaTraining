@@ -9,6 +9,7 @@ public class View {
     public final String SMALLER = "Try a larger number in between ";
     public final String BIGGER = "Try a smaller number in between ";
     public final String BAD_INPUT = "Nope. You should to chose number between ";
+    public final String GREETING = "Try to guess the number between [ " + Constants.MIN_BARRIER + " and " + Constants.MAX_BATTIER + " ]";
 
     public void massageReader(String message) {
         System.out.print(message);
