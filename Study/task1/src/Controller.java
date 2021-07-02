@@ -14,7 +14,7 @@ public class Controller {
     model.setPartOne(firstPartUtility());
     model.setPartTwo(secondPartUtility());
 
-        System.out.println(model.getPartOne() + " " + model.getPartTwo());
+        System.out.println(model.getGreeting());
     }
 
     public String firstPartUtility(){
