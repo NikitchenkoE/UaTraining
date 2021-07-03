@@ -5,8 +5,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Controller {
-    Model model = new Model();
-    View view = new View();
+    Model model;
+    View view;
 
     public Controller(Model model, View view) {
         this.model = model;
