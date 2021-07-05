@@ -18,13 +18,9 @@ public class Controller {
 
     public void startApp() {
         Scanner scan = new Scanner(System.in);
-        InputerToController inputer = new InputerToController(scan,view);
+        InputerToController inputer = new InputerToController(scan, view);
         inputer.inputToUtility();
     }
-
-
-
-
 
 
 }

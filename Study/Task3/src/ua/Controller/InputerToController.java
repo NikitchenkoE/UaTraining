@@ -14,18 +14,18 @@ public class InputerToController {
 
     String firstname;
     String nickname;
+
     public InputerToController(Scanner scanner, View view) {
         this.scanner = scanner;
         this.view = view;
     }
 
 
-
-    public void inputToUtility(){
-        UtilityController utilityController = new UtilityController(scanner,view);
+    public void inputToUtility() {
+        UtilityController utilityController = new UtilityController(scanner, view);
         String str = (String.valueOf(View.bundle.getLocale()).equals("ua"))
                 ? RegularExpressions.REGULAR_EXPRESSION_FIRST_NAME_UA : RegularExpressions.REGULAR_EXPRESSION_FIRST_NAME;
-        this.firstname = utilityController.checkAndOutputInfo(FIRST_NAME_REQUEST,str);
-        this.nickname = utilityController.checkAndOutputInfo(NICKNAME_REQUEST,RegularExpressions.REGULAR_EXPRESSION_NICKNAME);
+        this.firstname = utilityController.checkAndOutputInfo(FIRST_NAME_REQUEST, str);
+        this.nickname = utilityController.checkAndOutputInfo(NICKNAME_REQUEST, RegularExpressions.REGULAR_EXPRESSION_NICKNAME);
     }
 }
