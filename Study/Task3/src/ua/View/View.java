@@ -30,13 +30,16 @@ public class View {
     public void printInput(String message) {
         messageReader(concatinateString(
                 bundle.getString(INPUT_MESSAGE),
+                " ",
                 bundle.getString(message)));
     }
 
     public void printInputMistake(String message) {
         messageReader(concatinateString(
                 bundle.getString(MISTAKE),
+                " ",
                 bundle.getString(INPUT_MESSAGE),
+                " ",
                 bundle.getString(message)));
     }
 
