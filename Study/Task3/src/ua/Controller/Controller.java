@@ -17,37 +17,16 @@ public class Controller {
     }
 
     public void startApp() {
-        view.messageReader();
-        adderInformationLastName();
-        adderInformationNickname();
-        model.formReader();
+        Scanner scan = new Scanner(System.in);
+        InputerToController inputer = new InputerToController(scan,view);
+        inputer.inputToUtility();
     }
 
-    private void adderInformationLastName() {
-        view.messageReader(view.LAST_NAME_REQUEST);
-        Pattern patternLastName = Pattern.compile(RegularExpressions.REGULAR_EXPRESSION_LAST_NAME);
-        Matcher matcherLastName = patternLastName.matcher(new Scanner(System.in).nextLine());
-        while (matcherLastName.find()) {
-            model.setLastName(matcherLastName.group());
-        }
-        if (model.getLastName() == null) {
-            view.messageReader(view.MISTAKE);
-            adderInformationLastName();
-        }
-    }
 
-    private void adderInformationNickname() {
-        view.messageReader(view.NICKNAME_REQUEST);
-        Pattern patternNickname = Pattern.compile(RegularExpressions.REGULAR_EXPRESSION_NICKNAME);
-        Matcher matcherNickname = patternNickname.matcher(new Scanner(System.in).nextLine());
-        while (matcherNickname.find()) {
-            model.setNickname(matcherNickname.group());
-        }
-        if (model.getNickname() == null) {
-            view.messageReader(view.MISTAKE);
-            adderInformationNickname();
-        }
-    }
+
+
+
+
 }
 
 
