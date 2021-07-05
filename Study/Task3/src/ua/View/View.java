@@ -1,4 +1,4 @@
-package ua;
+package ua.View;
 
 public class View {
     public final String REGISTRATION_GREETING = "Welcome, write your information please";

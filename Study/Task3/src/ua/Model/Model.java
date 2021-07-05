@@ -1,4 +1,4 @@
-package ua;
+package ua.Model;
 
 public class Model {
     private String lastName;

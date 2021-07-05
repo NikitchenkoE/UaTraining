@@ -1,4 +1,7 @@
-package ua;
+package ua.Controller;
+
+import ua.Model.Model;
+import ua.View.View;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;
