@@ -17,7 +17,7 @@ public class Controller {
     }
 
     public void startApp() {
-        view.messageReader(view.REGISTRATION_GREETING);
+        view.messageReader();
         adderInformationLastName();
         adderInformationNickname();
         model.formReader();
