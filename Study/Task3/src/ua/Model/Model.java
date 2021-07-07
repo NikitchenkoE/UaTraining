@@ -1,15 +1,15 @@
 package ua.Model;
 
 public class Model {
-    private String lastName;
+    private String firstname;
     private String nickname;
 
-    public String getLastName() {
-        return lastName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
     public String getNickname() {
@@ -21,6 +21,6 @@ public class Model {
     }
 
     public void formReader() {
-        System.out.println(getLastName() + " " + getNickname());
+        System.out.println(getFirstname() + " " + getNickname());
     }
 }
