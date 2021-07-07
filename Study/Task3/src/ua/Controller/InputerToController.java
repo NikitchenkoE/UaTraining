@@ -1,5 +1,6 @@
 package ua.Controller;
 
+import ua.Model.Model;
 import ua.View.View;
 
 import java.util.Scanner;
@@ -10,10 +11,20 @@ import static ua.View.ViewConstants.NICKNAME_REQUEST;
 public class InputerToController {
     private Scanner scanner;
     private View view;
+    private Model model =new Model();
+
+    private String firstname;
+    private String nickname;
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
 
 
-    String firstname;
-    String nickname;
 
     public InputerToController(Scanner scanner, View view) {
         this.scanner = scanner;
