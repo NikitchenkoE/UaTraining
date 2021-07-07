@@ -20,6 +20,13 @@ public class Controller {
         Scanner scan = new Scanner(System.in);
         InputerToController inputer = new InputerToController(scan, view);
         inputer.inputToUtility();
+        setToModel(inputer.getFirstname(), inputer.getNickname());
+        model.formReader();
+    }
+
+    public void setToModel(String firstname, String nickname){
+        model.setNickname(nickname);
+        model.setFirstname(firstname);
     }
 
 
