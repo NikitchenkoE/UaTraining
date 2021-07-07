@@ -5,4 +5,5 @@ public interface ViewConstants {
     String FIRST_NAME_REQUEST = "input.first.name.data";
     String NICKNAME_REQUEST = "input.NICKNAME.data";
     String MISTAKE = "input.mistake.data";
+    String USED_NICKNAME = "input.USEDNICKNAME.data";
 }
