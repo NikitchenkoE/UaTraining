@@ -20,7 +20,7 @@ public enum DataBaseImitation {
         return nickname;
     }
 
-    public boolean checkNickname(String nickname) {
+    public static boolean checkNickname(String nickname) {
         for (DataBaseImitation dataBaseImitation : DataBaseImitation.values()) {
             if (dataBaseImitation.getNickname().equals(nickname)) {
                 return true;
