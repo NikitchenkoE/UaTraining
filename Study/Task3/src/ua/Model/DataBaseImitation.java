@@ -19,4 +19,13 @@ public enum DataBaseImitation {
     public String getNickname() {
         return nickname;
     }
+
+    public boolean checkNickname(String nickname) {
+        for (DataBaseImitation dataBaseImitation : DataBaseImitation.values()) {
+            if (dataBaseImitation.getNickname().equals(nickname)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
