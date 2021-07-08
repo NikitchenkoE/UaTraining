@@ -5,6 +5,7 @@ import ua.View.View;
 
 import java.util.Scanner;
 
+import static ua.Controller.RegularExpressions.REGULAR_EXPRESSION_NICKNAME;
 import static ua.View.ViewConstants.FIRST_NAME_REQUEST;
 import static ua.View.ViewConstants.NICKNAME_REQUEST;
 
@@ -37,6 +38,11 @@ public class InputerToController {
         String str = (String.valueOf(View.bundle.getLocale()).equals("ua"))
                 ? RegularExpressions.REGULAR_EXPRESSION_FIRST_NAME_UA : RegularExpressions.REGULAR_EXPRESSION_FIRST_NAME;
         this.firstname = utilityController.checkAndOutputInfo(FIRST_NAME_REQUEST, str);
-        this.nickname = utilityController.checkAndOutputInfo(NICKNAME_REQUEST, RegularExpressions.REGULAR_EXPRESSION_NICKNAME);
+        this.nickname = utilityController.checkAndOutputInfo(NICKNAME_REQUEST, REGULAR_EXPRESSION_NICKNAME);
+    }
+
+    public void inputNickname(){
+        UtilityController utilityController = new UtilityController(scanner,view);
+        this.nickname = utilityController.checkAndOutputInfo(NICKNAME_REQUEST,REGULAR_EXPRESSION_NICKNAME);
     }
 }
