@@ -48,7 +48,7 @@ public class OperationWithIntegerArray {
                 .stream().map(integer -> integer / integerList.size()).findAny();
         avarage.ifPresent(System.out::println);
 
-        //Min value in array
+        //Min value in arra
         Integer minValue1 = integerList.stream().distinct().filter(integer -> integer != 0)
                 .reduce(Integer.MAX_VALUE, (left, right) -> left < right ? left : right);
         System.out.println("Value=" + minValue1 + " index=" + integerList.indexOf(minValue1));
