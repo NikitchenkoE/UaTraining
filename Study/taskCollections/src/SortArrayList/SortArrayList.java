@@ -21,9 +21,7 @@ public class SortArrayList {
             sorter.put(e,newValue);
         }
 
-        System.out.println(sorter.toString());
-
-
+        System.out.println(sorter);
 
     }
 }
